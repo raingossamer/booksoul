@@ -7,14 +7,17 @@
 两件事，中间隔着磁盘：
 
 1. **解析**：`epub / mobi / azw3 / pdf / docx / txt / html / md` → 结构化 Markdown，
-   落在 `library/` 下。
+   落在书库目录下（命令行：`library/`；网页版：`data/library/`）。
 2. **对话**：基于解析产物，以三种人格之一回答读者——研读者、作者本人、书本身。
 
-对话层有两条路，都可用：
+对话层有三条路，都可用：
 
 - **Claude Code 原生**：在这个目录里直接问，`.claude/skills/booksoul/` 那个 skill
   会让我去读 `library/` 和 `prompts/`。零配置，不花 API 钱。
 - **独立 CLI**：`booksoul ask` / `booksoul chat`，可接任意模型后端（见下）。
+- **网页版**：多用户的 `booksoul_api`（FastAPI + PostgreSQL）+ `web/`（Vue 3），
+  `docker compose up -d` 起全套，见 README「五、网页版」。它在同一进程里 import
+  引擎，不另起服务。
 
 ## 代码结构
 
@@ -35,9 +38,25 @@ src/booksoul/
   config.py      大脑配置与预设
   ask.py         把书、人格、大脑接到一起
   cli.py         命令行
+src/booksoul_api/  网页版的 HTTP 层，分层 routers → services → repositories → models
+  core/          配置、JWT 与密码哈希、错误、日志、路径边界校验
+  db/            engine、session、脱离请求的工作单元
+  models/        SQLAlchemy ORM 实体
+  schemas/       Pydantic 请求 / 响应模型
+  repositories/  只做数据存取，每个查询都带 user_id
+  services/      业务编排，唯一允许 import booksoul 的层（各自职责见 backend.md「模块边界」）
+  routers/       FastAPI 路由，一个资源一个文件
+  main.py        app 装配；deps.py 依赖注入
+web/             前端（Vue 3 + TS + Pinia + Vite），开发时 /api 代理到 127.0.0.1:8000
+migrations/      Alembic 迁移，api 容器启动时自动 upgrade head
+tests/           pytest；连库的用例用 compose 那个 Postgres 里的 booksoul_test 库
+Dockerfile       三阶段：web-build(node) → web(nginx) → api(python)
+compose.yml      db + api + web，端口只绑 127.0.0.1
+docker/          nginx.conf（静态 + SPA 回退 + /api 反代）、api 入口脚本
 prompts/         三种人格的提示词 —— 这是项目真正要反复打磨的东西
-library/         解析产物（已 gitignore）
-design/          前端界面稿（Claude Design 画布，静态设计稿，不是能跑的前端）
+library/         命令行的解析产物（已 gitignore）
+data/            网页版的书库与上传（已 gitignore；compose 与本机开发共用这一份）
+design/          前端界面稿（Claude Design 画布，静态设计稿；能跑的前端在 web/）
 ProjectModel/    开发流程框架：流程 Skills、设计文档、各阶段产出（见下半篇）
 ```
 
@@ -53,6 +72,10 @@ ProjectModel/    开发流程框架：流程 Skills、设计文档、各阶段�
   `book.warn()` 记下来继续走，不要让异常冒到顶上。
 - **不要假装成功。** 抽不出文字的扫描版 PDF 要明确报错并给出 OCR 建议，
   而不是写出一个空 md。
+- **分层不要穿透。** 引擎不许 import 任何 Web 框架——CLI 那条路要能独立跑；
+  Web 层里只有 `services/` 调引擎，`routers/` 不碰数据库也不 import 引擎。
+- **api 只能跑一个实例。** 会话「正在答」的席位、启动时的孤儿清扫都假设单进程：
+  本机的 uvicorn 和容器里的 api 别同时开，也别 `--scale api=2`（backend.md 待确认 #2）。
 
 ## 验证改动
 
@@ -68,6 +91,17 @@ PYTHONPATH=src python -m booksoul ask --brain qwen "问题"   # 端到端
 
 改了解析逻辑后，至少抽查一章的 Markdown：看有没有全角空格残留、有没有被误判成
 代码块的行、脚注有没有接上。
+
+动了网页版（或任何 Python 代码）之后：
+
+```bash
+docker compose up -d db                     # 测试要连库；不起的话一半以上的用例会跳过
+python -m pytest                            # 全量
+ruff check . && ruff format --check src tests migrations
+cd web && npm run lint && npx vue-tsc --noEmit
+```
+
+pytest 跳过的用例数要看一眼：库没起时它不报错，只是安静地跳过。
 
 ## 两组同名目录，别混
 

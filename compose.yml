@@ -42,13 +42,16 @@ services:
       BOOKSOUL_LIBRARY_ROOT: /data/library
       BOOKSOUL_UPLOAD_ROOT: /data/uploads
     volumes:
-      # 绑定挂载而不是命名卷：这个项目的日常就是「我的书在盘上看得见」
-      # （CLAUDE.md 的验证命令直接读书库目录），藏进命名卷等于看不见。
+      # 绑定挂载而不是命名卷：这个项目的日常就是「我的书在盘上看得见」，
+      # 藏进命名卷等于看不见。
       #
-      # 但**刻意不共用根目录那份 `library/`**：compose 有自己的数据库，
-      # 它的 user_id / book_id 与本机开发那套是两套独立编号，而存储路径是
-      # `{user_id}/{book_id}-{书名}`。共用的话，两边各自编到同一个号时会
-      # **静默覆盖**对方的解析产物 —— 不报错，只是某本书的正文变成了另一本。
+      # 挂的是 `data/`，**不是根目录那份 `library/`**。凡是连这个数据库的进程
+      # （这个容器、本机开发的 uvicorn）都必须看见同一个书库根：库里存的是
+      # `{user_id}/{book_id}-{书名}`，根一分叉，就会去一个空目录里找一本库里
+      # 明明有记录的书 —— 查不到，而且不报错。本机开发靠 `.env` 里的
+      # `BOOKSOUL_LIBRARY_ROOT` / `BOOKSOUL_UPLOAD_ROOT` 指到这里。
+      # 根目录的 `library/` 是命令行 `booksoul parse` 的产物（`library/<书名>/`，
+      # 不进数据库），和这里是两回事。
       - ./data/library:/data/library
       - ./data/uploads:/data/uploads
       # 人格提示词是这个项目最值钱的东西（CLAUDE.md 第一条），而且⑧屏能改写它。

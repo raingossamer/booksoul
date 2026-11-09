@@ -38,5 +38,5 @@ node_modules/
 # 原始上传文件。重解析要用它，但它是用户的书，不进仓库。
 uploads/
 
-# compose 那一套的书库与上传（与本机开发那份 library/ 刻意分开，见 compose.yml）
+# 网页版的书库与上传：compose 与本机开发共用这一份；根目录的 library/ 是命令行的（见 compose.yml）
 data/
