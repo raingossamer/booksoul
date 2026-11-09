@@ -1,0 +1,77 @@
+/* design token。
+ *
+ * 值来自 design/ 九屏界面稿，不是重新配的色。色彩在这套设计里是有归属的，
+ * 不是装饰——每个颜色只回答一个问题：这是谁做的、要不要人管。
+ *
+ *   朱批 --mark     人做的：引文、当前位置、主按钮、批注
+ *   靛   --machine  机器做的：解析中、检索、模型、进度
+ *   黄檗 --doubt    等人判断的地方
+ *   重墨 --ink      停下来了
+ *
+ * **成功不给颜色**。解析成功是默认状态，只显示数字，不用绿色对勾。
+ * 只有偏离默认（存疑、阻断、进行中）才着色。组件里一律不写字面色值。
+ */
+
+:root {
+  /* 语义色 */
+  --mark: #a8332a;
+  --mark-strong: #8f2b23;
+  /* 朱批的淡底：溯源来路条、脚注标记 hover。比 --surface 暖一档 */
+  --mark-bg: #f7ecea;
+  --machine: #3a4c78;
+  --doubt: #8a6520;
+  --doubt-bg: #faf4e6;
+  --ink: #1a1e24;
+  --ink-text: #e6d9ce;
+  /* 命令行卡片那一格，比 --ink 浅一档 */
+  --terminal: #23282f;
+  /* 深底上的黄檗。--doubt 是给浅底用的，压在书脊上会糊掉 */
+  --doubt-on-dark: #c9a961;
+
+  /* 书脊。③屏的书架上每本书一个色调，取自界面稿的三种。
+   * 纯装饰，按 book.id 取模轮换——但失败态永远是 --ink，那个不是装饰。 */
+  --spine-1: #23282f;
+  --spine-1-accent: #a8332a;
+  --spine-2: #2c3a33;
+  --spine-2-accent: #c9a961;
+  --spine-3: #2b3242;
+  --spine-3-accent: #9bb0dc;
+
+  /* 底色 */
+  --paper: #f2f3ef;
+  --surface: #fbfbf8;
+  --panel: #edeee9;
+
+  /* 线 */
+  --rule: #d9dbd2;
+  --hair: #e7e8e1;
+  --edge: #dfe1d8;
+  --edge-strong: #c9ccc2;
+  --dash: #b8bcb2;
+
+  /* 文字 */
+  --text: #1a1e24;
+  --text-secondary: #4e5865;
+  --text-muted: #7b8593;
+  --text-faint: #9aa3ae;
+  /* 长正文比 --text 松一档。整屏衬线体压满 #1A1E24 会发闷 */
+  --text-prose: #23282f;
+
+  /* 深色图标栏 */
+  --rail: #1a1e24;
+  --rail-active: #2a2f38;
+  --rail-icon: #4a525e;
+  --rail-icon-active: #f2f3ef;
+
+  /* 字体三档 */
+  --font-serif: 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: 'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* 圆角。0–2px，不用大圆角——这套视觉是直角的。 */
+  --radius: 0px;
+  --radius-sm: 2px;
+
+  /* 图标栏宽度，九屏一致 */
+  --rail-width: 72px;
+}

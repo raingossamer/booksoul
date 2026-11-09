@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; height: 860px; display: flex; background: #F2F3EF; color: #1A1E24; overflow: hidden;">
+
+  <div style="width: 72px; background: #1A1E24; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 4px; flex-shrink: 0;">
+    <div style="width: 30px; height: 30px; border: 1.5px solid #A8332A; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px; color: #E6D9CE;">魂</span>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h5v14H4z"></path><path d="M11 5h4v14h-4z"></path><path d="M17.5 5.6l3.2 1 -3.6 12.8 -3.2-1z"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: #2A2F38; border-left: 2px solid #A8332A;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"></path><path d="M8 10l4 4 4-4"></path><path d="M4 18v2h16v-2"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.5 5 8 4.5 4 5v13c4-.5 6.5 0 8 1.5"></path><path d="M12 6.5C13.5 5 16 4.5 20 5v13c-4-.5-6.5 0-8 1.5"></path><path d="M12 6.5v13"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7 7 0 0 1-9.8 6.4L5 20l1.6-4.8A7 7 0 1 1 20 12z"></path></svg>
+    </div>
+    <div style="flex-grow: 1;"></div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B8593" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h10"></path><path d="M18 7h2"></path><path d="M4 12h3"></path><path d="M11 12h9"></path><path d="M4 17h9"></path><path d="M17 17h3"></path><circle cx="16" cy="7" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0;">
+
+    <div style="display: flex; align-items: baseline; gap: 14px; padding: 26px 40px 18px; border-bottom: 1px solid #D9DBD2;">
+      <h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 22px; letter-spacing: 0.04em;">导入</h1>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7B8593; letter-spacing: 0.04em; font-variant-numeric: tabular-nums;">4 个文件　2 已入库　1 进行中　1 停下了</span>
+      <div style="flex-grow: 1;"></div>
+      <span style="font-size: 11.5px; color: #9AA3AE;">一个文件坏掉不影响其它文件</span>
+    </div>
+
+    <div style="flex-grow: 1; padding: 22px 40px 0; display: flex; flex-direction: column; gap: 13px; overflow: hidden;">
+
+      <!-- 进行中 · 靛 -->
+      <div style="background: #FBFBF8; border: 1px solid #C9CCC2; border-left: 3px solid #3A4C78; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">人间词话.pdf</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; color: #3A4C78; border: 1px solid #A9B5D0; padding: 1px 6px;">魔数 25 50 44 46 → PDF</span>
+          <div style="flex-grow: 1;"></div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #3A4C78; font-variant-numeric: tabular-nums;">转换正文 41/64 节</span>
+        </div>
+        <div style="height: 3px; background: #E2E4DC; display: flex;">
+          <div style="width: 64%; background: #3A4C78;"></div>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #4E5865;">读取</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #C9CCC2; padding: 0 8px;">›</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #4E5865;">解析目录</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #C9CCC2; padding: 0 8px;">›</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #3A4C78; font-weight: 500;">转换正文</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #C9CCC2; padding: 0 8px;">›</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4BAC2;">清洗</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #C9CCC2; padding: 0 8px;">›</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4BAC2;">写入</span>
+          <div style="flex-grow: 1;"></div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA3AE;">正在剥页眉页脚：「人间词话　王国维」出现 64 次</span>
+        </div>
+      </div>
+
+      <!-- 已入库 · 不给颜色 -->
+      <div style="background: #FBFBF8; border: 1px solid #DFE1D8; padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
+        <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 15px;">悉达多</span>
+        <span style="font-size: 12px; color: #7B8593;">赫尔曼·黑塞　姜乙</span>
+        <div style="display: flex; gap: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums; padding-left: 8px; border-left: 1px solid #E7E8E1;">
+          <span>16 节</span><span>48,155 字</span><span>脚注 21</span><span>图 3</span>
+        </div>
+        <div style="flex-grow: 1;"></div>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA3AE;">悉达多.epub</span>
+        <span style="font-size: 12px; color: #A8332A; border-bottom: 1px solid #DDB5B1;">看解析报告</span>
+      </div>
+
+      <!-- 已入库 · 存疑 -->
+      <div style="background: #FBFBF8; border: 1px solid #DFE1D8; border-left: 3px solid #C9A961; padding: 16px 20px; display: flex; flex-direction: column; gap: 11px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 15px;">瓦尔登湖</span>
+          <span style="font-size: 12px; color: #7B8593;">亨利·戴维·梭罗</span>
+          <div style="display: flex; gap: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums; padding-left: 8px; border-left: 1px solid #E7E8E1;">
+            <span>18 节</span><span>121,400 字</span>
+          </div>
+          <div style="flex-grow: 1;"></div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA3AE;">walden.txt</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #8A6520; border: 1px solid #E5D5AE; padding: 2px 7px;">2 处存疑</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 11px 14px; background: #FAF4E6;">
+          <span style="font-size: 12px; color: #6B5218; line-height: 1.6;">编码按打分猜的：<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px;">gb18030</span> 得分最高，已转 UTF-8。若正文有乱码，可指定 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px;">--encoding big5</span> 重解。</span>
+          <span style="font-size: 12px; color: #6B5218; line-height: 1.6;">没找到目录，18 节是从正文猜出来的，全是一级 —— <span style="border-bottom: 1px solid #C9A961;">核对章节划分</span></span>
+        </div>
+      </div>
+
+      <!-- 停下了 · 重墨 -->
+      <div style="background: #1A1E24; padding: 18px 20px; display: flex; flex-direction: column; gap: 13px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F2F3EF;">庄子集释_扫描版.pdf</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; color: #1A1E24; background: #E6D9CE; padding: 2px 7px;">没有文字层</span>
+          <div style="flex-grow: 1;"></div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7B8593;">418 页 · 抽出 0 字</span>
+        </div>
+        <span style="font-size: 12.5px; color: #C2C8D0; line-height: 1.85; max-width: 760px;">整本都是图片。这不是解析失败——里面本来就没有可读的文字，先 OCR 再导入。<span style="color: #8E96A2;">宁可在这里停下，也不写出一个空的 md 骗你。</span></span>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 11px 14px; background: #2A2F38; border-left: 2px solid #E6D9CE;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #E6D9CE; flex-grow: 1;">ocrmypdf -l chi_sim 庄子集释_扫描版.pdf 庄子集释.pdf</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7B8593" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11"></rect><path d="M5 15V5h10"></path></svg>
+        </div>
+      </div>
+
+      <div style="flex-grow: 1;"></div>
+
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 18px; border: 1px dashed #C9CCC2; background: #FBFBF8;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AA3AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="M8 11l4 4 4-4"></path><path d="M4 19h16"></path></svg>
+        <span style="font-size: 12.5px; color: #7B8593;">继续拖入文件或整个目录</span>
+      </div>
+
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px; padding: 11px 40px; border-top: 1px solid #D9DBD2; background: #EDEEE9;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #9AA3AE;">等价于</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865;">booksoul parse ~/Downloads/books/</span>
+      <div style="flex-grow: 1;"></div>
+      <span style="font-size: 11.5px; color: #7B8593;">界面和命令行走的是同一条管线</span>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

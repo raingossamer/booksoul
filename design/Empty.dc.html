@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; height: 860px; display: flex; background: #F2F3EF; color: #1A1E24; overflow: hidden;">
+
+  <div style="width: 72px; background: #1A1E24; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 4px; flex-shrink: 0;">
+    <div style="width: 30px; height: 30px; border: 1.5px solid #A8332A; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px; color: #E6D9CE;">魂</span>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: #2A2F38; border-left: 2px solid #A8332A;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h5v14H4z"></path><path d="M11 5h4v14h-4z"></path><path d="M17.5 5.6l3.2 1 -3.6 12.8 -3.2-1z"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"></path><path d="M8 10l4 4 4-4"></path><path d="M4 18v2h16v-2"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.5 5 8 4.5 4 5v13c4-.5 6.5 0 8 1.5"></path><path d="M12 6.5C13.5 5 16 4.5 20 5v13c-4-.5-6.5 0-8 1.5"></path><path d="M12 6.5v13"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7 7 0 0 1-9.8 6.4L5 20l1.6-4.8A7 7 0 1 1 20 12z"></path></svg>
+    </div>
+    <div style="flex-grow: 1;"></div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B8593" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h10"></path><path d="M18 7h2"></path><path d="M4 12h3"></path><path d="M11 12h9"></path><path d="M4 17h9"></path><path d="M17 17h3"></path><circle cx="16" cy="7" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0;">
+
+    <div style="display: flex; align-items: baseline; gap: 12px; padding: 26px 40px 20px; border-bottom: 1px solid #D9DBD2;">
+      <h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 22px; letter-spacing: 0.04em;">书库</h1>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7B8593; letter-spacing: 0.06em;">空</span>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 40px; gap: 34px;">
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; max-width: 640px;">
+        <h2 style="margin: 0; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 25px; line-height: 1.7; letter-spacing: 0.05em; text-align: center; text-wrap: balance;">把一本书交给模型之前，<br>先让它变成模型读得懂的样子。</h2>
+        <div style="width: 40px; height: 2px; background: #A8332A;"></div>
+        <p style="margin: 0; font-size: 13px; line-height: 2; color: #4E5865; text-align: center; max-width: 520px;">解析一次，写进 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1A1E24;">library/</span>；此后每次对话都从那里读，不再重来。</p>
+      </div>
+
+      <!-- 拖放区 -->
+      <div style="width: 660px; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 42px 40px 38px; border: 1px dashed #B8BCB2; background: #FBFBF8;">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#A8332A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7.5 10.5L12 15l4.5-4.5"></path><path d="M4 18v3h16v-3"></path></svg>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 9px;">
+          <span style="font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 16px; letter-spacing: 0.04em;">把书拖到这里</span>
+          <span style="font-size: 12px; color: #7B8593;">文件或整个目录都行 · 按内容识别格式，扩展名不对也没关系</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 18px; background: #A8332A;">
+          <span style="font-size: 13px; font-weight: 500; color: #FBFBF8;">选择文件</span>
+        </div>
+        <div style="display: flex; gap: 7px; flex-wrap: wrap; justify-content: center;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">EPUB</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">MOBI</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">AZW3</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">PDF</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">DOCX</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">TXT</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">HTML</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7B8593; border: 1px solid #DFE1D8; padding: 3px 9px;">MD</span>
+        </div>
+      </div>
+
+      <!-- 另外两条路 -->
+      <div style="width: 660px; display: flex; flex-direction: column; gap: 11px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="height: 1px; flex-grow: 1; background: #DFE1D8;"></div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #9AA3AE;">不开界面也一样</span>
+          <div style="height: 1px; flex-grow: 1; background: #DFE1D8;"></div>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 13px 15px; background: #23282F;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; color: #7B8593;">命令行</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; line-height: 1.75; color: #E6D9CE;">booksoul parse 悉达多.epub<br>booksoul ask "他为什么走"</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 13px 15px; background: #FBFBF8; border: 1px solid #C9CCC2;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; color: #7B8593;">Claude Code 原生</span>
+            <span style="font-size: 12px; line-height: 1.8; color: #4E5865;">在项目目录里直接问，skill 会去读 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px;">library/</span>。零配置，不花 API 钱。</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; padding: 12px 40px; border-top: 1px solid #D9DBD2; background: #EDEEE9;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7B8593;">书库位置</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4E5865;">~/Desktop/Self-Project/book/library/</span>
+      <div style="flex-grow: 1;"></div>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA3AE;">解析产物是普通 Markdown，可以直接拿走</span>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

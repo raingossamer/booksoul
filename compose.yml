@@ -1,0 +1,77 @@
+# 一条 `docker compose up -d` 起全套。三个服务，只有 web 对外开口。
+#
+# 端口刻意绑在 127.0.0.1 上：backend.md「认证授权」写着「**HTTPS 是硬前提**」——
+# 用户的模型 key 每次提问都经 X-Brain-Key 头明文送到服务端。这套 compose 没有
+# TLS，所以它只应当在本机用。要放到局域网或公网，前面必须再加一层 TLS 终结，
+# 而不是把下面这行的 127.0.0.1 删掉。
+
+name: booksoul
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: booksoul
+      POSTGRES_DB: booksoul
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?请先复制 .env.example 为 .env 并填好}
+    ports:
+      # 对**本机**开口：本地开发（uvicorn --reload）与测试套件都连它，不再另起一个
+      # Postgres。绑 127.0.0.1 而不是 0.0.0.0 —— 这是一个没有 TLS 的数据库端口。
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      # api 要等它真能接连接再跑迁移。只看容器起没起来是不够的：
+      # Postgres 首次启动要建库、跑 initdb，那几秒里连接会被拒。
+      test: ["CMD-SHELL", "pg_isready -U booksoul -d booksoul"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      target: api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      BOOKSOUL_DATABASE_URL: postgresql+asyncpg://booksoul:${POSTGRES_PASSWORD}@db:5432/booksoul
+      BOOKSOUL_SECRET_KEY: ${BOOKSOUL_SECRET_KEY:?请先复制 .env.example 为 .env 并填好}
+      BOOKSOUL_LIBRARY_ROOT: /data/library
+      BOOKSOUL_UPLOAD_ROOT: /data/uploads
+    volumes:
+      # 绑定挂载而不是命名卷：这个项目的日常就是「我的书在盘上看得见」
+      # （CLAUDE.md 的验证命令直接读书库目录），藏进命名卷等于看不见。
+      #
+      # 但**刻意不共用根目录那份 `library/`**：compose 有自己的数据库，
+      # 它的 user_id / book_id 与本机开发那套是两套独立编号，而存储路径是
+      # `{user_id}/{book_id}-{书名}`。共用的话，两边各自编到同一个号时会
+      # **静默覆盖**对方的解析产物 —— 不报错，只是某本书的正文变成了另一本。
+      - ./data/library:/data/library
+      - ./data/uploads:/data/uploads
+      # 人格提示词是这个项目最值钱的东西（CLAUDE.md 第一条），而且⑧屏能改写它。
+      # 挂出来：改动落在主机这份上，重建镜像不会把它冲掉。
+      - ./prompts:/app/prompts
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/api/formats',timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      target: web
+    depends_on:
+      - api
+    ports:
+      # 只绑本机。理由见文件顶部。
+      - "127.0.0.1:${BOOKSOUL_PORT:-8317}:80"
+    restart: unless-stopped
+
+volumes:
+  db-data:

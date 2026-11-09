@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; height: 860px; display: flex; background: #F2F3EF; color: #1A1E24; overflow: hidden;">
+
+  <div style="width: 72px; background: #1A1E24; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 4px; flex-shrink: 0;">
+    <div style="width: 30px; height: 30px; border: 1.5px solid #A8332A; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px; color: #E6D9CE;">魂</span>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h5v14H4z"></path><path d="M11 5h4v14h-4z"></path><path d="M17.5 5.6l3.2 1 -3.6 12.8 -3.2-1z"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"></path><path d="M8 10l4 4 4-4"></path><path d="M4 18v2h16v-2"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.5 5 8 4.5 4 5v13c4-.5 6.5 0 8 1.5"></path><path d="M12 6.5C13.5 5 16 4.5 20 5v13c-4-.5-6.5 0-8 1.5"></path><path d="M12 6.5v13"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: #2A2F38; border-left: 2px solid #A8332A;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7 7 0 0 1-9.8 6.4L5 20l1.6-4.8A7 7 0 1 1 20 12z"></path></svg>
+    </div>
+    <div style="flex-grow: 1;"></div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B8593" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h10"></path><path d="M18 7h2"></path><path d="M4 12h3"></path><path d="M11 12h9"></path><path d="M4 17h9"></path><path d="M17 17h3"></path><circle cx="16" cy="7" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0;">
+
+    <!-- 顶栏 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 15px 30px 12px; border-bottom: 1px solid #D9DBD2;">
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px; letter-spacing: 0.04em;">悉达多</span>
+      <span style="font-size: 12px; color: #7B8593;">赫尔曼·黑塞</span>
+      <div style="flex-grow: 1;"></div>
+
+      <div style="display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 11px; background: #FBFBF8; border: 1px solid #D9DBD2;">
+        <div style="width: 5px; height: 5px; background: #3A4C78;"></div>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4E5865;">qwen-plus</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#7B8593" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 11px; background: #FBFBF8; border: 1px solid #A9B5D0;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #7B8593;">读了</span>
+        <div style="width: 60px; height: 3px; background: #E2E4DC; display: flex;"><div style="width: 31%; background: #3A4C78;"></div></div>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #3A4C78; font-variant-numeric: tabular-nums;">5/16 节</span>
+        <span style="font-size: 11.5px; color: #3A4C78; border-bottom: 1px solid #A9B5D0;">看怎么挑的</span>
+      </div>
+    </div>
+
+    <!-- 人格切换条 -->
+    <div style="display: flex; align-items: stretch; padding: 0 30px; border-bottom: 1px solid #D9DBD2; background: #EDEEE9;">
+      <sc-for list="{{personas}}" as="p" hint-placeholder-count="4">
+        <div onClick="{{ p.pick }}" style="{{p.tabStyle}}">
+          <span style="{{p.nameStyle}}">{{p.name}}</span>
+          <span style="font-size: 10.5px; color: #7B8593; line-height: 1.45;">{{p.desc}}</span>
+        </div>
+      </sc-for>
+      <div style="flex-grow: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 9px; padding: 0 2px 0 16px;">
+        <span style="font-size: 12px; color: #4E5865;">处境模式</span>
+        <div style="{{reflectTrack}}">
+          <div style="{{reflectKnob}}"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 对话区 -->
+    <div style="flex-grow: 1; padding: 20px 30px 0; display: flex; flex-direction: column; gap: 16px; overflow: hidden; min-height: 0;">
+
+      <!-- 提问 -->
+      <div style="display: flex; justify-content: flex-end; flex-shrink: 0;">
+        <div style="max-width: 620px; padding: 12px 16px; background: #23282F; color: #F2F3EF; font-size: 13px; line-height: 1.75;">{{question}}</div>
+      </div>
+
+      <!-- 回答 · 一列或三列 -->
+      <div style="{{answersStyle}}">
+        <sc-for list="{{cols}}" as="c" hint-placeholder-count="3">
+          <div style="{{c.colStyle}}">
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="{{c.avatarStyle}}">
+                <span style="{{c.glyphStyle}}">{{c.glyph}}</span>
+              </div>
+              <span style="{{c.tagStyle}}">{{c.tag}}</span>
+            </div>
+
+            <p style="{{c.leadStyle}}">{{c.lead}}</p>
+
+            <div style="{{c.quoteBoxStyle}}">
+              <p style="{{c.quoteStyle}}">{{c.quote}}</p>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#A8332A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14L20 4"></path><path d="M20 4v7"></path><path d="M20 4h-7"></path><path d="M18 14v6H4V6h6"></path></svg>
+                <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #A8332A; border-bottom: 1px solid #DDB5B1;">{{c.src}}</span>
+              </div>
+            </div>
+
+            <p style="{{c.tailStyle}}">{{c.tail}}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- 没载入的部分 -->
+      <div style="{{noticeStyle}}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A6520" stroke-width="1.8" stroke-linecap="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16.5v.01"></path></svg>
+        <span style="font-size: 11.5px; color: #6B5218; line-height: 1.7; flex-grow: 1;">这个回答没看过另外 11 节 —— 包括《迦摩罗》《轮回》《船夫》。若追问后半程的事，先放宽预算。</span>
+        <span style="font-size: 11.5px; color: #8A6520; white-space: nowrap; border-bottom: 1px solid #C9A961;">载入全书重问</span>
+      </div>
+
+      <div style="flex-grow: 1;"></div>
+    </div>
+
+    <!-- 输入区 -->
+    <div style="padding: 0 30px 12px; flex-shrink: 0;">
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: #FBFBF8; border: 1px solid #C9CCC2;">
+        <span style="flex-grow: 1; font-size: 13px; color: #9AA3AE;">{{placeholder}}</span>
+        <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #A8332A;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FBFBF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M12 6l6 6-6 6"></path></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部仪表 -->
+    <div style="display: flex; align-items: center; gap: 18px; padding: 10px 30px; border-top: 1px solid #D9DBD2; background: #EDEEE9; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7B8593; font-variant-numeric: tabular-nums; flex-shrink: 0;">
+      <span>载入 5/16 节 · 17,938 字</span>
+      <span style="color: #C9CCC2;">│</span>
+      <span>输入 13,204</span>
+      <span>输出 {{outTok}}</span>
+      <span style="color: #3A4C78;">缓存命中 12,904</span>
+      <div style="flex-grow: 1;"></div>
+      <span>{{costNote}}</span>
+      <span style="color: #C9CCC2;">│</span>
+      <span>预算 20,000 字</span>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"reflect":{"editor":"boolean","default":false,"section":"行为"}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: "scholar" };
+  }
+
+  data() {
+    return [
+      {
+        id: "scholar", name: "研读者", glyph: "研",
+        desc: "引原文 · 分清事实与推演",
+        tag: "研读者　依据《乔达摩》《觉醒》",
+        tagShort: "研读者",
+        lead: "他拒绝的不是佛陀，而是「把佛陀当作外在权威来依附」这条路径本身。这一点必须先立住——他在当面交谈时开宗明义地肯定了法义的完备。",
+        leadShort: "他拒绝的不是佛陀，是「把佛陀当外在权威来依附」这条路径本身。他当面肯定了法义的完备。",
+        quote: "没人能通过法义得到解脱！您从未以言辞或法义宣讲您在证觉成道之际所发生的事。",
+        quoteShort: "没人能通过法义得到解脱！",
+        src: "去原文 · 乔达摩",
+        tail: "书里明写的是这一层。往下一层属于推演：他担心「皈依」本身会成为新的我执——这在他随后对迦摩罗的沉溺中得到了反证式的印证。",
+        tailShort: "以上是书里明写的。再往下属于推演：他怕「皈依」变成新的我执。"
+      },
+      {
+        id: "author", name: "作者", glyph: "黑",
+        desc: "黑塞本人 · 用他的语气与困惑",
+        tag: "赫尔曼·黑塞　1922",
+        tagShort: "黑塞",
+        lead: "我写他离开，是因为我自己那时也走不进任何一座现成的殿堂。你问他为什么拒绝——我当时想的是：一个人若能被说服，他所得的就还是别人的东西。",
+        leadShort: "我写他离开，是因为我那时也走不进任何一座现成的殿堂。一个人若能被说服，他所得的就还是别人的东西。",
+        quote: "智慧无法言传。智者试图传授智慧，听起来总像痴人说梦。",
+        quoteShort: "智慧无法言传。智者试图传授智慧，听起来总像痴人说梦。",
+        src: "去原文 · 乔文达",
+        tail: "这句话后来常被当成格言引用，但它在书里是一句无奈的话，不是一句聪明的话。我至今不确定自己有没有把这件事说清楚。",
+        tailShort: "这句后来常被当格言引用。但它在书里是无奈的话，不是聪明的话。"
+      },
+      {
+        id: "book", name: "书", glyph: "书",
+        desc: "书本身 · 只有自己这些字",
+        tag: "《悉达多》　十六节",
+        tagShort: "《悉达多》",
+        lead: "他在我第三节里走近佛陀，在同一节里走开。那之间隔着的不是一场辩论，是一个人忽然听见自己的声音。",
+        leadShort: "他在我第三节里走近佛陀，在同一节里走开。那之间隔着的不是辩论，是一个人忽然听见自己的声音。",
+        quote: "我将去往我自己。我曾试图从婆罗门、从沙门、从您那里学到些什么，而我学到的最多的，是我自己。",
+        quoteShort: "我将去往我自己。我学到的最多的，是我自己。",
+        src: "去原文 · 觉醒",
+        tail: "我知道一件读我的人常错过的事：他在第三节拒绝的东西，到第十三节又以另一副面孔回来了。那时他在河边，没有人可拒绝。",
+        tailShort: "读我的人常错过：他第三节拒绝的东西，第十三节又回来了。那时他在河边，没有人可拒绝。"
+      }
+    ];
+  }
+
+  renderVals() {
+    const reflect = this.props.reflect ?? false;
+    const list = this.data();
+    const compare = this.state.picked === "compare";
+
+    const tabs = list.concat([{ id: "compare", name: "对读", desc: "三个一起看" }]);
+    const personas = tabs.map((p) => {
+      const on = p.id === this.state.picked;
+      return {
+        name: p.name,
+        desc: p.desc,
+        pick: () => this.setState({ picked: p.id }),
+        tabStyle: "display: flex; flex-direction: column; gap: 2px; padding: 11px 18px 10px; cursor: pointer; min-width: " +
+          (p.id === "compare" ? "104px" : "154px") + "; border-bottom: 2px solid " +
+          (on ? "#A8332A" : "transparent") + "; background: " + (on ? "#F2F3EF" : "transparent") + ";",
+        nameStyle: "font-family: 'Noto Serif SC', serif; font-weight: " + (on ? "700" : "500") +
+          "; font-size: 14px; letter-spacing: 0.06em; color: " + (on ? "#A8332A" : "#4E5865") + ";"
+      };
+    });
+
+    // 三种人格用填法区分身份，不借用状态色
+    const skin = {
+      scholar: { av: "background: #A8332A;", gl: "#FBFBF8", rule: "#A8332A", tagCol: "#A8332A" },
+      author:  { av: "background: #23282F;", gl: "#E6D9CE", rule: "#23282F", tagCol: "#23282F" },
+      book:    { av: "background: #FBFBF8; border: 1.5px solid #A8332A;", gl: "#A8332A", rule: "#8E9AA8", tagCol: "#4E5865" }
+    };
+
+    const picked = compare ? list : [list.find((p) => p.id === this.state.picked) || list[0]];
+
+    const cols = picked.map((p) => {
+      const s = skin[p.id];
+      const size = compare ? 12 : 13.5;
+      const qsize = compare ? 12.5 : 13.5;
+      return {
+        glyph: p.glyph,
+        tag: compare ? p.tagShort : p.tag,
+        lead: compare ? p.leadShort : p.lead,
+        quote: compare ? p.quoteShort : p.quote,
+        src: p.src,
+        tail: compare ? p.tailShort : p.tail,
+        colStyle: "display: flex; flex-direction: column; gap: 10px; min-width: 0; " +
+          (compare ? "flex: 1; padding: 14px 16px; background: #FBFBF8; border: 1px solid #DFE1D8;" : "max-width: 760px;"),
+        avatarStyle: "display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex-shrink: 0; " + s.av,
+        glyphStyle: "font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 13.5px; color: " + s.gl + ";",
+        tagStyle: "font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: " + s.tagCol + ";",
+        leadStyle: "margin: 0; font-size: " + size + "px; line-height: 1.95; color: #1A1E24;",
+        quoteBoxStyle: "display: flex; flex-direction: column; gap: 8px; padding: 11px 14px; background: " +
+          (compare ? "#F2F3EF" : "#FBFBF8") + "; border-left: 2px solid " + s.rule + ";",
+        quoteStyle: "margin: 0; font-family: 'Noto Serif SC', serif; font-size: " + qsize + "px; line-height: 1.9; color: #2A3038;",
+        tailStyle: "margin: 0; font-size: " + size + "px; line-height: 1.95; color: " + (compare ? "#4E5865" : "#1A1E24") + ";"
+      };
+    });
+
+    return {
+      personas: personas,
+      cols: cols,
+      answersStyle: compare
+        ? "display: flex; gap: 14px; align-items: flex-start; flex-shrink: 0;"
+        : "display: flex; flex-shrink: 0;",
+      noticeStyle: compare
+        ? "display: none;"
+        : "display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #FAF4E6; border: 1px solid #E5D5AE; max-width: 760px; flex-shrink: 0;",
+      question: reflect
+        ? "我三十多岁，做着一份别人眼里很好的工作，但每天醒来都觉得不是我要的。"
+        : "悉达多为什么拒绝追随佛陀？",
+      placeholder: reflect ? "说说你的处境……" : "问这本书……",
+      outTok: compare ? "1,431" : "486",
+      costNote: compare ? "对读一次 = 三次调用" : "同一段书，三种人格共用缓存",
+      reflectTrack: "position: relative; width: 34px; height: 19px; border-radius: 10px; background: " +
+        (reflect ? "#A8332A" : "#C9CCC2") + ";",
+      reflectKnob: "position: absolute; top: 2px; left: " + (reflect ? "17px" : "2px") +
+        "; width: 15px; height: 15px; border-radius: 50%; background: #FBFBF8;"
+    };
+  }
+}
+</script>
+</body>
+</html>

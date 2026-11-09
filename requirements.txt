@@ -1,0 +1,18 @@
+# 必需
+lxml>=4.9            # epub/html 解析
+
+# 可选：按需要解析的格式安装
+python-docx>=1.0     # .docx
+pymupdf>=1.23        # .pdf（推荐，版面还原最好）
+# pypdf>=4.0         # .pdf 的轻量备选，和 pymupdf 二选一
+mobi>=0.3            # .mobi / .azw3
+chardet>=5.0         # .txt 编码识别的兜底（内置探测已能应付多数情况）
+
+# 可选：大脑后端
+anthropic>=1.0       # --brain claude。其余 OpenAI 兼容端点用标准库，无需依赖
+
+# Web 层（HTTP API + 前端）：装 `pip install -e ".[api]"`，不要照抄本文件 ——
+# 本文件只覆盖引擎那条路（CLAUDE.md「验证改动」里的三条命令）。
+# 其中 psycopg2-binary 容易漏：应用走 asyncpg，但 alembic 迁移走同步的
+# psycopg2（见 core/config.py:sync_database_url）。漏了它，
+# `alembic upgrade head` 会在干净环境里当场失败，而开发机上往往恰好装着。

@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; height: 860px; display: flex; background: #F2F3EF; color: #1A1E24; overflow: hidden;">
+
+  <div style="width: 72px; background: #1A1E24; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 4px; flex-shrink: 0;">
+    <div style="width: 30px; height: 30px; border: 1.5px solid #A8332A; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px; color: #E6D9CE;">魂</span>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h5v14H4z"></path><path d="M11 5h4v14h-4z"></path><path d="M17.5 5.6l3.2 1 -3.6 12.8 -3.2-1z"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: #2A2F38; border-left: 2px solid #A8332A;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"></path><path d="M8 10l4 4 4-4"></path><path d="M4 18v2h16v-2"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.5 5 8 4.5 4 5v13c4-.5 6.5 0 8 1.5"></path><path d="M12 6.5C13.5 5 16 4.5 20 5v13c-4-.5-6.5 0-8 1.5"></path><path d="M12 6.5v13"></path></svg>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A525E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7 7 0 0 1-9.8 6.4L5 20l1.6-4.8A7 7 0 1 1 20 12z"></path></svg>
+    </div>
+    <div style="flex-grow: 1;"></div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B8593" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h10"></path><path d="M18 7h2"></path><path d="M4 12h3"></path><path d="M11 12h9"></path><path d="M4 17h9"></path><path d="M17 17h3"></path><circle cx="16" cy="7" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0;">
+
+    <div style="display: flex; align-items: center; gap: 13px; padding: 24px 32px 16px; border-bottom: 1px solid #D9DBD2;">
+      <h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 20px; letter-spacing: 0.04em;">解析报告</h1>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865;">悉达多.epub</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9AA3AE; font-variant-numeric: tabular-nums;">2.6 MB · 用时 2.4s</span>
+      <div style="flex-grow: 1;"></div>
+      <span style="font-size: 11.5px; color: #4E5865;">解析成功不等于解析正确 —— 这是一本可以逐条核对的账</span>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; min-width: 0; overflow: hidden;">
+
+      <!-- 左：账本 -->
+      <div style="flex-grow: 1; padding: 20px 32px 0; display: flex; flex-direction: column; gap: 18px; min-width: 0; overflow: hidden;">
+
+        <!-- 读进来的 -->
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #9AA3AE;">读进来的</span>
+          <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; gap: 14px; padding: 7px 0; border-bottom: 1px solid #E7E8E1;">
+              <span style="width: 86px; flex-shrink: 0; font-size: 12px; color: #7B8593;">格式</span>
+              <span style="font-size: 12.5px; line-height: 1.6;">EPUB 2.0.1 —— 按头 4 字节 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #3A4C78;">50 4B 03 04</span> 加 mimetype 判定，不看扩展名</span>
+            </div>
+            <div style="display: flex; gap: 14px; padding: 7px 0; border-bottom: 1px solid #E7E8E1;">
+              <span style="width: 86px; flex-shrink: 0; font-size: 12px; color: #7B8593;">目录来源</span>
+              <span style="font-size: 12.5px; line-height: 1.6;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">toc.ncx</span>（EPUB2 路线）· spine 20 个文件 · 按锚点切出 16 节</span>
+            </div>
+            <div style="display: flex; gap: 14px; padding: 7px 0; border-bottom: 1px solid #E7E8E1;">
+              <span style="width: 86px; flex-shrink: 0; font-size: 12px; color: #7B8593;">元信息</span>
+              <span style="font-size: 12.5px; line-height: 1.6;">书名 · 作者 · 出版社 · 出版日 · ISBN 命中 5/5</span>
+            </div>
+            <div style="display: flex; gap: 14px; padding: 7px 0;">
+              <span style="width: 86px; flex-shrink: 0; font-size: 12px; color: #7B8593;">贡献者</span>
+              <span style="font-size: 12.5px; line-height: 1.6;">姜乙 —— OPF 没标角色，记为「贡献者」而不是替你猜成译者</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 改动了什么 -->
+        <div style="display: flex; flex-direction: column; gap: 9px; min-height: 0;">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #9AA3AE;">动过的地方</span>
+            <span style="font-size: 11.5px; color: #7B8593;">原文一个字没改，改的都是排版</span>
+          </div>
+          <div style="display: flex; flex-direction: column; background: #FBFBF8; border: 1px solid #DFE1D8;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">合并被硬换行切断的段落</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">2,907 行 → 806 段</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">去掉全角空格缩进 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7B8593;">U+3000</span></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">1,284 行</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">剥 XML 命名空间（NCX 有两种写法，都剥）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">412 处</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">行首 4 空格拉平（否则会变成代码块）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">63 行</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">站内链接转纯文本（含 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7B8593;">#f1</span> 这类锚点）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">24 处</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">脚注接回标准 Markdown 脚注</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">21 / 21 条</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px; border-bottom: 1px solid #E7E8E1;"><span style="flex-grow: 1; font-size: 12.5px;">目录页从正文剔除（它混在 spine 里）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">1 个文件</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 15px;"><span style="flex-grow: 1; font-size: 12.5px;">正文开头与标题重复的那一行去掉</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; font-variant-numeric: tabular-nums;">14 节</span></div>
+          </div>
+        </div>
+
+        <!-- 存疑 -->
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #8A6520;">要你看一眼的　2 处</span>
+          <div style="display: flex; gap: 10px;">
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 11px 14px; background: #FAF4E6; border: 1px solid #E5D5AE;">
+              <span style="font-size: 12px; color: #6B5218; line-height: 1.7;">「第一部」「第二部」各只有 5 字，多半是分部标题页而非正文。</span>
+              <span style="font-size: 11.5px; color: #8A6520; border-bottom: 1px solid #C9A961; align-self: flex-start;">打开核对</span>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 11px 14px; background: #FAF4E6; border: 1px solid #E5D5AE;">
+              <span style="font-size: 12px; color: #6B5218; line-height: 1.7;">译者字段为空。要让人格提示词里出现译者，需手工补一行。</span>
+              <span style="font-size: 11.5px; color: #8A6520; border-bottom: 1px solid #C9A961; align-self: flex-start;">补充元信息</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex-grow: 1;"></div>
+      </div>
+
+      <!-- 右：产出 -->
+      <div style="width: 352px; flex-shrink: 0; border-left: 1px solid #D9DBD2; background: #EDEEE9; padding: 20px 26px 0; display: flex; flex-direction: column; gap: 14px;">
+
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #9AA3AE;">写出来的</span>
+
+        <div style="display: flex; flex-direction: column; gap: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; background: #FBFBF8; border: 1px solid #DFE1D8; padding: 14px 15px;">
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #1A1E24;">library/悉达多/</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #4E5865; padding-left: 16px;">book.md</span><span style="color: #9AA3AE;">178 KB</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #4E5865; padding-left: 16px;">INDEX.md</span><span style="color: #9AA3AE;">2.1 KB</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #4E5865; padding-left: 16px;">meta.json</span><span style="color: #9AA3AE;">724 B</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #4E5865; padding-left: 16px;">chapters/</span><span style="color: #9AA3AE;">16 个</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #7B8593; padding-left: 32px;">01-扉页.md</span><span style="color: #B4BAC2;">1 KB</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #7B8593; padding-left: 32px;">03-婆罗门之子.md</span><span style="color: #B4BAC2;">14 KB</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #B4BAC2; padding-left: 32px;">…</span></div>
+          <div style="display: flex; padding: 3px 0;"><span style="flex-grow: 1; color: #4E5865; padding-left: 16px;">images/</span><span style="color: #9AA3AE;">3 张</span></div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 7px; padding: 13px 15px; background: #FBFBF8; border: 1px solid #DFE1D8;">
+          <span style="font-size: 12px; color: #4E5865; line-height: 1.85;">这些是普通 Markdown。换个编辑器打开、丢进别的工具、直接发给别人都行 —— 书魂不占着你的书。</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 36px; border: 1px solid #C9CCC2; background: #FBFBF8;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4E5865" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h6l2 2h10v10H3z"></path></svg>
+            <span style="font-size: 12.5px; color: #4E5865;">打开这个目录</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 36px; border: 1px solid #C9CCC2; background: #FBFBF8;">
+            <span style="font-size: 12.5px; color: #4E5865;">用别的参数重解一遍</span>
+          </div>
+        </div>
+
+        <div style="flex-grow: 1;"></div>
+
+        <div style="display: flex; flex-direction: column; gap: 5px; padding: 12px 0 14px; border-top: 1px solid #DFE1D8;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #9AA3AE;">等价于</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4E5865; line-height: 1.7;">booksoul parse -v 悉达多.epub</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

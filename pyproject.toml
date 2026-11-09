@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "booksoul"
+version = "0.1.0"
+description = "把书解析成模型读得懂的 Markdown，再让模型扮演作者与书本身，与读者对话"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "lxml>=4.9",
+]
+
+[project.optional-dependencies]
+docx = ["python-docx>=1.0"]
+pdf = ["pymupdf>=1.23"]
+kindle = ["mobi>=0.3"]
+claude = ["anthropic>=1.0"]
+all = ["python-docx>=1.0", "pymupdf>=1.23", "mobi>=0.3", "anthropic>=1.0", "chardet>=5.0"]
+# Web 层。引擎本身不需要这些——装了才起得了 booksoul_api。
+api = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy[asyncio]>=2.0",
+    "asyncpg>=0.29",
+    # 迁移走同步驱动（core/config.py:sync_database_url 把 +asyncpg 换成 +psycopg2）。
+    # 用 -binary 是因为它带轮子，不需要 libpq-dev 与编译器；单实例本地部署够用。
+    "psycopg2-binary>=2.9",
+    "alembic>=1.13",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.4",
+    "bcrypt>=4.1",
+    "pyjwt>=2.8",
+    "python-multipart>=0.0.9",
+    "email-validator>=2.2",
+]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "httpx>=0.27", "ruff>=0.6"]
+
+[project.scripts]
+booksoul = "booksoul.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+booksoul = ["../../prompts/*.md"]
+
+# ---------------------------------------------------------------- ruff
+# 裁决于 2026-09-16（Grill R2）：引入 ruff，全仓统一。下面三个值不是新定的规矩，
+# 是 backend.md 从既有 21 个模块实测统计出来的写法（4 空格 100% / 双引号 98.2% /
+# 行宽 P99=86），只是把它们从「靠人记得」变成「工具保证」。
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+extend-exclude = ["library", "design", "web"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = [
+    # 行宽交给 formatter。lint 按字符数算，中文一个字占两列却只算一个字符，报不准。
+    "E501",
+    # FastAPI 的 Depends() 本来就写在默认值里，这是框架惯例不是 bug。
+    "B008",
+    # contextlib.suppress 比 try/except/pass 慢一个量级，且本项目那两处
+    # （cli._setup_console、brain._http_error_message）用 try 读起来更直白。
+    "SIM105",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

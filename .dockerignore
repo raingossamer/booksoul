@@ -1,0 +1,26 @@
+# 构建上下文里不该出现的东西。第一类是体积，第二类是安全。
+
+# 体积：这几个目录能把构建上下文从几 MB 撑到几 GB
+web/node_modules
+web/dist
+library/
+uploads/
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ruff_cache
+*.egg-info
+
+# 安全：.env 里有 BOOKSOUL_SECRET_KEY。它经 compose 的 environment 注入，
+# **不进镜像** —— 镜像是会被分发的，环境变量不会。
+.env
+.env.*
+!.env.example
+
+# 用不着
+.git
+.gitignore
+.claude
+ProjectModel/
+design/
+*.epub

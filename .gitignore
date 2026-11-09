@@ -1,0 +1,42 @@
+# 解析产物：书是你自己的，不进仓库
+library/
+
+# 原始书籍文件
+*.epub
+*.mobi
+*.azw3
+*.azw
+*.pdf
+*.docx
+
+# 本地配置可能含私人端点
+booksoul.local.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# 前端依赖（web/dist 已被上面的 dist/ 盖住）
+node_modules/
+
+# Claude Code 的本机权限设置，只对这台机器有意义
+.claude/settings.local.json
+
+# 本机的密钥与端口，绝不提交。compose 从这里取 BOOKSOUL_SECRET_KEY 与数据库密码。
+# 模板在 .env.example，那份可以提交。
+.env
+.env.*
+!.env.example
+
+# 原始上传文件。重解析要用它，但它是用户的书，不进仓库。
+uploads/
+
+# compose 那一套的书库与上传（与本机开发那份 library/ 刻意分开，见 compose.yml）
+data/
